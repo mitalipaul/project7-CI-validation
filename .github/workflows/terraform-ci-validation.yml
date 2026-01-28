@@ -19,6 +19,9 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.14.3
+      
+      - name: Terraform init
+        run: terraform init -backend=false
 
       - name: Terraform fmt check
         run: terraform fmt -check -recursive
